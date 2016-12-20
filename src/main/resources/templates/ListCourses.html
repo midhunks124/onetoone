@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>Courses </title>
+</head>
+<body bgcolor="#f5f5dc">
+<h1 align="center">List of all courses</h1>
+
+<table width="40%" align="center"  >
+    <tr bgcolor="#00bfff" ><th>id</th><th>Course Name</th></tr>
+        <tr bgcolor="#7fffd4" align="center" th:unless="${#lists.isEmpty(courses)}"
+            th:each="courses : ${courses}"
+        >
+        <td bgcolor="#7fffd4" th:text="${courses.id}"> id</td>
+            <td><a th:text="${courses.name}" th:href="@{|/coursedetails/${courses.id}|}"></a>
+
+               </td>
+        </tr>
+    <tr bgcolor="   #7fff00" align="center" th:if="${#lists.isEmpty(courses)}">
+        <td bgcolor="#7fff00" colspan="2">No Courses to show</td>
+    </tr>
+
+</table>
+    <input style="margin-left: 40%;  width:20%" type="button" value="Create new course"   onclick="location.href='/newCourse'"/>
+
+
+
+</body>
+</html>

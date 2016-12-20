@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div align="center" th:unless="${#lists.isEmpty(listStudent)}"
+         th:each="listStudent : ${listStudent}">
+
+        <h1 th:text="${listStudent.name}">Title</h1> <br/>
+        <span th:text="${listStudent.courses.name}">descrioption</span><br/><br/>
+        <!--Duration : <b><span th:text="${courselists.duration}">Title</span></b> Starts on<b/>-->
+        <!--<span th:text="${courselists.start_date}">Author</span></b>-->
+</div>
+    </div>
+
+
+
+
+</body>
+</html>

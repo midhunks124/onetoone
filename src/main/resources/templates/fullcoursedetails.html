@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>CourseDetails</title>
+</head>
+<body bgcolor="#00bfff">
+<div align="center" th:unless="${#lists.isEmpty(courselist)}"
+     th:each="courselists : ${courselist}">
+
+    <h1 th:text="${courselists.name}">Title</h1> <br/>
+    <span th:text="${courselists.description}">descrioption</span><br/><br/>
+    Duration : <b><span th:text="${courselists.duration}">Title</span></b> Starts on<b>
+    <span th:text="${courselists.start_date}">Author</span></b>
+
+</div>
+
+</body>
+</html>

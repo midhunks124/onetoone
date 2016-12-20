@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>HomePage</title>
+</head>
+<body bgcolor="#00bfff">
+<div th:unless="${#lists.isEmpty(alertSucess)}"
+     th:each="alt : ${alertSucess}">
+
+
+ <script>
+     alert(""+'th:text="${alt}">');
+ </script>
+</div>
+<h1 align="center">This is homepage</h1>
+<a href="/coursedetails"><h2>Click to view Courses</h2></a>
+</body>
+</html>

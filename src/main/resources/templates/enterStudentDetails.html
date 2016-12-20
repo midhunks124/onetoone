@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>    <title>Create Course</title>
+</head>
+<body>
+<form method="POST" action="/EnterStudent">
+
+    <input  type="text" name="name" placeholder="Student name"/><br/>
+    <input type="number" name="age" placeholder="age"/><br/>
+<select name="courseid"  th:unless="${#lists.isEmpty(coursedetails)}">
+    <option> Select </option>
+
+    <option
+             th:each="coursedetails:${coursedetails}" th:value="${coursedetails.id}"
+             th:text="${coursedetails.name}">
+
+    </option>
+
+
+</select>
+    <input type="place" name="place" placeholder="enter place"/><br/>
+    <input type="submit" value=" submit"/><input type="reset" value="reset"/><br/>
+
+
+</form>
+</body>
+</html>
